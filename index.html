@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Simon Game</h1>
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span id="current-score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Best:</span>
+                    <span id="best-score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Level:</span>
+                    <span id="current-level">1</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Lives:</span>
+                    <span id="lives">3</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-board">
+            <div class="simon-board">
+                <div class="simon-button red" data-color="red" data-index="0"></div>
+                <div class="simon-button blue" data-color="blue" data-index="1"></div>
+                <div class="simon-button yellow" data-color="yellow" data-index="2"></div>
+                <div class="simon-button green" data-color="green" data-index="3"></div>
+                <div class="simon-button purple" data-color="purple" data-index="4"></div>
+                <div class="simon-button orange" data-color="orange" data-index="5"></div>
+                <div class="simon-button pink" data-color="pink" data-index="6"></div>
+                <div class="simon-button cyan" data-color="cyan" data-index="7"></div>
+                <div class="center-circle">
+                    <div class="center-content">
+                        <div class="simon-logo">SIMON</div>
+                        <div class="game-status" id="game-status">Ready to Play</div>
+                        <div class="timer" id="timer">0.0s</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button id="start-btn" class="control-btn start-btn">Start Game</button>
+            <button id="reset-btn" class="control-btn reset-btn">Reset</button>
+            <div class="difficulty-selector">
+                <label for="difficulty">Mode:</label>
+                <select id="difficulty">
+                    <option value="normal">Normal</option>
+                    <option value="hard">Hard</option>
+                    <option value="extreme">Extreme</option>
+                    <option value="nightmare">Nightmare</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Watch the sequence carefully</li>
+                    <li>Repeat exactly in the same order</li>
+                    <li>Time limit gets shorter each level</li>
+                    <li>More colors unlock as you progress</li>
+                    <li>Some levels have special challenges</li>
+                </ul>
+            </div>
+            
+            <div class="stats">
+                <h3>Game Statistics:</h3>
+                <div class="stat-item">
+                    <span>Games Played:</span>
+                    <span id="games-played">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Success Rate:</span>
+                    <span id="success-rate">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span>Max Level:</span>
+                    <span id="max-level">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Total Time:</span>
+                    <span id="total-time">0s</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="game-over-modal">
+            <div class="modal-content">
+                <h2 id="modal-title">Game Over!</h2>
+                <p class="final-score">Final Score: <span id="final-score">0</span></p>
+                <p class="game-result" id="game-result"></p>
+                <div class="modal-buttons">
+                    <button id="play-again-btn" class="control-btn">Play Again</button>
+                    <button id="close-modal-btn" class="control-btn secondary">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="challenge-overlay" id="challenge-overlay">
+            <div class="challenge-text" id="challenge-text"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
